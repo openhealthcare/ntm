@@ -1,0 +1,20 @@
+{% load forms %}
+{% input  field="ClinicalHistory.bmi"  %}
+{% input  field="ClinicalHistory.respiratory_history"  %}
+{% input  field="ClinicalHistory.ntm_risk_factors"  %}
+
+{% input  field="ClinicalHistory.primary_immunodeficiency"  %}
+{% input  field="ClinicalHistory.secondary_immunodeficiency"  %}
+{% input  field="ClinicalHistory.other_immunodeficiency"  %}
+
+
+{% textarea  field="ClinicalHistory.details_of_immunosupressive_drug_therapy"  %}
+{% input  field="ClinicalHistory.immunosuppression_indication"  %}
+{% input  field="ClinicalHistory.immunosuppression_duration"  %}
+{% checkbox  field="ClinicalHistory.rhematoid_arthritis"  %}
+{% checkbox  field="ClinicalHistory.serongative_arthritis"  %}
+{% checkbox  field="ClinicalHistory.other_rheumatological_condition"  %}
+
+{% checkbox  field="ClinicalHistory.active_malignancy"  %}
+{% checkbox  field="ClinicalHistory.past_malignancy"  %}
+{% input  field="ClinicalHistory.malignancy_type"  %}

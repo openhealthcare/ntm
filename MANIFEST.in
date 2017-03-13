@@ -1,0 +1,3 @@
+recursive-include ntm/static *
+recursive-include ntm/assets *
+recursive-include ntm/templates *

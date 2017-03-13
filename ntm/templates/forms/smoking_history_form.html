@@ -1,0 +1,4 @@
+{% load forms %}
+{% radio  field="SmokingHistory.smoker"  %}
+{% input  field="SmokingHistory.cigarettes_per_day" show="editing.smoking_history.smoker && editing.smoking_history.smoker !== 'Non-smoker'" %}
+{% input  field="SmokingHistory.number_of_years_smoking" show="editing.smoking_history.smoker && editing.smoking_history.smoker !== 'Non-smoker'" %}

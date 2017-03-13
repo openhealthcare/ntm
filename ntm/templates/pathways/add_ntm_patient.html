@@ -1,0 +1,335 @@
+{% load forms %}
+{% load pathways %}
+<div class="row">
+  <div class="col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 >{% icon "fa-user" %} Demographics</h3>
+      </div>
+      <div class="panel-body">
+        <div class="form-horizontal">
+          {% include models.Demographics.get_form_template %}
+
+        </div>
+      </div>
+    </div>
+  </div> <!-- Col -->
+  <div class="col-md-4">
+    <p class="sidebar-help content-offset">
+      Basic demographic information about this patient. <br /> (Pulled from other hospital systems where available).
+    </p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 >{% icon "fa-user" %} Smoking History</h3>
+      </div>
+      <div class="panel-body">
+        <div class="form-horizontal">
+          {% include models.SmokingHistory.get_form_template %}
+        </div>
+      </div>
+    </div>
+  </div> <!-- Col -->
+  <div class="col-md-4">
+    <p class="sidebar-help content-offset">
+      Has the patient smoked before?
+    </p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 >{% icon "fa-user" %} Clinical History</h3>
+      </div>
+      <div class="panel-body">
+        <div class="form-horizontal">
+            <div ng-class="{'has-error': form.height.$error.pattern}" class="form-group">
+              <div class="row">
+                <div class="col-md-12">
+                  <label class="control-label col-sm-3">Height</label>
+                  <div class="col-sm-2">
+                    <input class="form-control" type="text" name="height" ng-model="editing.observation.height" ng-pattern="/^[0-9\.]+$/">
+                  </div>
+                  <label class="control-label"><small>(cm)</small></label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-9 col-md-push-3">
+                  <span class="help-block" ng-show="form.height.$error.pattern">
+                    Height must be a number
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div ng-class="{'has-error': form.weight.$error.pattern}" class="form-group">
+            <div class="row">
+              <div class="col-md-12">
+                <label class="control-label col-sm-3">Weight</label>
+                <div class="col-sm-2">
+                  <input class="form-control" type="text" name="weight" ng-model="editing.observation.weight" ng-pattern="/^[0-9\.]+$/">
+                </div>
+                <label class="control-label"><small>(kg)</small></label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-9 col-md-push-3">
+                <span class="help-block" ng-show="form.weight.$error.pattern">
+                  Weight must be a number
+                </span>
+              </div>
+            </div>
+          </div>
+          {% include models.OtherObservations.get_form_template %}
+        </div>
+      </div>
+    </div>
+  </div> <!-- Col -->
+  <div class="col-md-4">
+    <p class="sidebar-help content-offset">
+      The patients ntm specific clinical history
+    </p>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 >{% icon "fa-user" %} Respiratory History</h3>
+      </div>
+      <div class="panel-body">
+        <div class="form-horizontal">
+          {% include models.RespiratoryHistory.get_form_template %}
+
+        </div>
+      </div>
+    </div>
+  </div> <!-- Col -->
+  <div class="col-md-4">
+    <p class="sidebar-help content-offset">
+      Respiratory issues the patient has had
+    </p>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 >{% icon models.NtmAssociatedRiskFactor.get_icon %} {{ models.NtmAssociatedRiskFactor.get_display_name }}</h3>
+      </div>
+      <div class="panel-body">
+        <div class="form-horizontal">
+          {% include models.NtmAssociatedRiskFactor.get_form_template %}
+        </div>
+      </div>
+    </div>
+  </div> <!-- Col -->
+  <div class="col-md-4">
+    <p class="sidebar-help content-offset">
+      Respiratory issues the patient has had
+    </p>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 >{% icon models.Immunodeficiency.get_icon %} {{ models.Immunodeficiency.get_display_name }}</h3>
+      </div>
+      <div class="panel-body">
+        <div class="form-horizontal">
+          {% include models.Immunodeficiency.get_form_template %}
+        </div>
+      </div>
+    </div>
+  </div> <!-- Col -->
+  <div class="col-md-4">
+    <p class="sidebar-help content-offset">
+      Immunodeficiency issues the patient has had
+    </p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 >{% icon models.Rheumatology.get_icon %} {{ models.Rheumatology.get_display_name }}</h3>
+      </div>
+      <div class="panel-body">
+        <div class="form-horizontal">
+          {% include models.Rheumatology.get_form_template %}
+        </div>
+      </div>
+    </div>
+  </div> <!-- Col -->
+  <div class="col-md-4">
+    <p class="sidebar-help content-offset">
+      Respiratory issues the patient has had
+    </p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 >{% icon models.Malignancy.get_icon %} {{ models.Malignancy.get_display_name }}</h3>
+      </div>
+      <div class="panel-body">
+        <div class="form-horizontal">
+          {% include models.Malignancy.get_form_template %}
+        </div>
+      </div>
+    </div>
+  </div> <!-- Col -->
+  <div class="col-md-4">
+    <p class="sidebar-help content-offset">
+      Malignancy issues the patient has had
+    </p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 >{% icon models.CancerTreatment.get_icon %} {{ models.CancerTreatment.get_display_name }}</h3>
+      </div>
+      <div class="panel-body">
+        <div class="form-horizontal">
+          {% include models.CancerTreatment.get_form_template %}
+        </div>
+      </div>
+    </div>
+  </div> <!-- Col -->
+  <div class="col-md-4">
+    <p class="sidebar-help content-offset">
+      Cancer treatment that the patient is undergoing or has had
+    </p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-8">
+    <div class="panel panel-default">
+      <div class="form-horizontal">
+        <div class="panel-heading">
+          <h3 >{% icon "fa-stethoscope" %} Symptoms</h3>
+        </div>
+        <div class="panel-body">
+          <div class="form-horizontal">
+            <div class="row">
+              <div ng-repeat="column in columns" class="col-md-6">
+                <div ng-repeat="symptomField in column" class="form-group">
+                  <label class="control-label col-sm-6">[[ ntmSymptomFields[symptomField] ]]</label>
+                  <div class="col-sm-6">
+                    <label class="radio-inline" ng-repeat="val in ['Yes', 'No']">
+                      <input ng-change="updateSymptoms(symptomField)" ng-value="val === 'Yes'" type="radio" ng-model="ntmSymptom[symptomField]">
+                      [[ val ]]
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% include models.NtmSymptom.get_form_template %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <p class="sidebar-help content-offset">
+      Symptoms that the patient presents with
+    </p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 >{% icon models.Microbiology.get_icon %} {{ models.Microbiology.get_display_name }}</h3>
+      </div>
+      <div class="panel-body">
+        <div class="form-horizontal">
+          {% include models.Microbiology.get_form_template %}
+        </div>
+      </div>
+    </div>
+  </div> <!-- Col -->
+  <div class="col-md-4">
+    <p class="sidebar-help content-offset">
+      Microbiology issues the patient has had
+    </p>
+  </div>
+</div>
+<h1>Radiology</h1>
+<div class="row">
+  <div class="col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 >{% icon models.Xray.get_icon %} {{ models.Xray.get_display_name }}</h3>
+      </div>
+      <div class="panel-body">
+        <div class="form-horizontal">
+          {% include models.Xray.get_form_template %}
+        </div>
+      </div>
+    </div>
+  </div> <!-- Col -->
+  <div class="col-md-4">
+    <p class="sidebar-help content-offset">
+      The patients xray results
+    </p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 >{% icon models.CTFindings.get_icon %} {{ models.CTFindings.get_display_name }}</h3>
+      </div>
+      <div class="panel-body">
+        <div class="form-horizontal">
+          {% include models.CTFindings.get_form_template %}
+        </div>
+      </div>
+    </div>
+  </div> <!-- Col -->
+  <div class="col-md-4">
+    <p class="sidebar-help content-offset">
+      The patients CT scan results
+    </p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 >{% icon models.Treatment.get_icon %} {{ models.Treatment.get_display_name }}</h3>
+      </div>
+      <div class="panel-body">
+        <div class="form-horizontal">
+          {% multisave models.Treatment %}
+        </div>
+      </div>
+    </div>
+  </div> <!-- Col -->
+  <div class="col-md-4">
+    <p class="sidebar-help content-offset">
+      The Treatment(s) the patient has undergone
+    </p>
+  </div>
+</div>

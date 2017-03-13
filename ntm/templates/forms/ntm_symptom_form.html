@@ -1,0 +1,7 @@
+{% load forms %}
+{% select autofocus field="NtmSymptom.symptoms" multiple=True tagging=False help_text="If a symptom isn't in the list, add it in the details box" %}
+{% textarea  field="NtmSymptom.symptom_details" %}
+{% input  field="NtmSymptom.excercise_tolerence"  %}
+{% radio field="NtmSymptom.cough_type"  %}
+{% radio  field="NtmSymptom.sputum_colour"  %}
+{% textarea  field="NtmSymptom.weight_loss_details"  %}

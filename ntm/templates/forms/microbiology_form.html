@@ -1,0 +1,55 @@
+{% load forms %}
+{% datepicker  field="Microbiology.date_of_sample"  %}
+{% radio  field="Microbiology.specimen_type"  %}
+
+<div class="row">
+  <div class="col-md-12">
+    <h4>
+      NTM Species Isolated
+    </h4>
+  </div>
+</div>
+{% checkbox  field="Microbiology.mycrobacterium_avium"  %}
+{% checkbox  field="Microbiology.mycrbacterium_intracellulare"  %}
+{% checkbox  field="Microbiology.mycrbacterium_kansasil"  %}
+{% checkbox  field="Microbiology.mycrbacterium_abcessus"  %}
+{% checkbox  field="Microbiology.mycrbacterium_chelonae"  %}
+{% checkbox  field="Microbiology.mycrbacterium_fortuitum"  %}
+{% checkbox  field="Microbiology.mycrbacterium_genavense"  %}
+{% checkbox  field="Microbiology.mycrbacterium_gordonae"  %}
+{% checkbox  field="Microbiology.mycrbacterium_haemophilum"  %}
+{% checkbox  field="Microbiology.mycrbacterium_immunogenum"  %}
+{% checkbox  field="Microbiology.mycrbacterium_malmoense"  %}
+{% checkbox  field="Microbiology.mycrbacterium_marinum"  %}
+{% checkbox  field="Microbiology.mycrbacterium_mucogenicum"  %}
+{% checkbox  field="Microbiology.mycrbacterium_nonchromogenicum"  %}
+{% checkbox  field="Microbiology.mycrbacterium_scrofulaceum"  %}
+{% checkbox  field="Microbiology.mycrbacterium_simiae"  %}
+{% checkbox  field="Microbiology.mycrbacterium_smegmatis"  %}
+{% checkbox  field="Microbiology.mycrbacterium_szulgai"  %}
+{% checkbox  field="Microbiology.mycrbacterium_terrae"  %}
+{% checkbox  field="Microbiology.mycrbacterium_ulcerans"  %}
+{% checkbox  field="Microbiology.mycrbacterium_xenopi"  %}
+
+
+<div class="row">
+  <div class="col-md-12">
+    <h4>
+      Other Bacteria Isolated
+    </h4>
+  </div>
+</div>
+{% checkbox  field="Microbiology.mycrbacterium_tuberculosis"  %}
+{% checkbox  field="Microbiology.pseudamonas_aeroginosa"  %}
+{% checkbox  field="Microbiology.steptoccocus_sp"  %}
+{% checkbox  field="Microbiology.staphylococcus_sp"  %}
+{% checkbox  field="Microbiology.enterococcus_sp"  %}
+{% checkbox  field="Microbiology.haemophilus_influenzae"  %}
+{% checkbox  field="Microbiology.klebsiella_pneumoniae"  %}
+{% checkbox  field="Microbiology.enterobacter"  %}
+{% checkbox  field="Microbiology.Aspergillus"  %}
+{% checkbox  field="Microbiology.moraxella"  %}
+{% input  field="Microbiology.other"  %}
+{% input  field="Microbiology.time_to_positive"  %}
+{% input  field="Microbiology.subspecies"  %}
+{% textarea  field="Microbiology.identification_methods"  %}
